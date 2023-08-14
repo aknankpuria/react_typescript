@@ -11,7 +11,9 @@ const [todo, setTodo] = useState<string >(" ");
 const [todos, setTodos] = useState <Todo[]>([]);
 
 
-const handleAdd = () => { };
+const handleAdd = (e : React.FormEvent) => {
+  e.preventDefault();
+ };
 
 console.log(todo)
 

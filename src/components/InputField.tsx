@@ -6,7 +6,7 @@ import { Todo } from './model';
 interface Props{
     todo : string;
     setTodo : React.Dispatch<React.SetStateAction<string>>;
-    handleAdd : () => void ;
+    handleAdd : (e:React.FormEvent) => void ;
     
 }
 const InputField:React.FC<Props> = ( { todo , setTodo , handleAdd}) => {
