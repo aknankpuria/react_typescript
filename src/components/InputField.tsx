@@ -1,15 +1,18 @@
 import React from 'react';
 
 import './style.css'; 
+import { Todo } from './model';
 
 interface Props{
     todo : string;
     setTodo : React.Dispatch<React.SetStateAction<string>>;
+    handleAdd : () => void ;
+    
 }
-const InputField:React.FC<Props> = ( { todo , setTodo}) => {
+const InputField:React.FC<Props> = ( { todo , setTodo , handleAdd}) => {
   return (
     <form className="input" >
-          <input type="input" 
+          <input type="input" onSubmit={handleAdd}
           value= {todo}
           onChange={ (e) => setTodo( e.target.value) } 
           placeholder="Enter a Task " className="input_box" />
