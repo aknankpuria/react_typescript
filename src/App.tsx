@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import InputField from './components/InputField';
+import { Todo } from './components/model';
 
 
 const App:React.FC = () => {
 
-const [todo, setTodo] = useState<string >(" ")
+const [todo, setTodo] = useState<string >(" ");
+const [todos, setTodos] = useState <Todo[]>([]);
 
 console.log(todo)
 
