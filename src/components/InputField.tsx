@@ -12,7 +12,7 @@ interface Props{
 const InputField:React.FC<Props> = ( { todo , setTodo , handleAdd}) => {
   return (
     <form className="input" >
-          <input type="input" onSubmit={handleAdd}
+          <input type="input" onSubmit={ (e)=>handleAdd(e)}
           value= {todo}
           onChange={ (e) => setTodo( e.target.value) } 
           placeholder="Enter a Task " className="input_box" />
