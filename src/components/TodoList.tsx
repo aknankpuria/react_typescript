@@ -1,8 +1,8 @@
 import React from 'react'
 
-const TodoList = () => {
+const TodoList : React.FC = () => {
   return (
-    <div>we will add todos here 
+    <div >we will add todos here 
       
     </div>
   )
