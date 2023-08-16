@@ -1,8 +1,9 @@
 import React from 'react'
+import "./style.css";
 
 const TodoList : React.FC = () => {
   return (
-    <div >we will add todos here 
+    <div className="todos">we will add todos here 
       
     </div>
   )
