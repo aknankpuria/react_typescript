@@ -1,12 +1,13 @@
 import React from 'react'
 import { Todo } from './model';
 import "./style.css"
+import { AiFillEdit} from 'react-icons/ai';
 
 
 type Props = {
   todo : Todo;
   todos : Todo[];
-  setTodos : React.Dispatch<React.SetStateAction<Todo[]>>
+  setTodos : React.Dispatch<React.SetStateAction<Todo[]>>;
 }
 
 const SingleTodo = ( {todo,todos,setTodos} : Props) => {
@@ -16,6 +17,13 @@ const SingleTodo = ( {todo,todos,setTodos} : Props) => {
           <span className="todos_single-text">
             {todo.todo}
           </span>
+
+          <div>
+            <span className="icon"> <AiFillEdit/></span>
+            <span className="icon"></span>
+            <span className="icon"></span>
+
+          </div>
 
 
 
