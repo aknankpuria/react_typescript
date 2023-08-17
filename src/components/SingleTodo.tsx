@@ -1,5 +1,6 @@
 import React from 'react'
-import { Todo } from './model'
+import { Todo } from './model';
+import "./style.css"
 
 
 type Props = {
@@ -10,10 +11,16 @@ type Props = {
 
 const SingleTodo = ( {todo,todos,setTodos} : Props) => {
   return (
-    <div>
+    <form className="todos_single" action="">
+
+          <span className="todos_single-text">
+            {todo.todo}
+          </span>
 
 
-    </div>
+
+
+    </form>
   )
 }
 
