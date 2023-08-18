@@ -22,9 +22,22 @@ const SingleTodo = ( {todo,todos,setTodos} : Props) => {
   return (
     <form className="todos_single" action="">
 
+      {
+          todo.isDone?(
+
           <span className="todos_single-text">
             {todo.todo}
           </span>
+
+          ):
+          (
+          <s className="todos_single-text">
+            {todo.todo}
+          </s>
+
+          )
+
+      }
 
           <div>
             <span className="icon"> <AiFillEdit/></span>
