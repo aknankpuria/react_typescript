@@ -14,10 +14,16 @@ type Props = {
 
 const SingleTodo = ( {todo,todos,setTodos} : Props) => {
 
-
+//done buuton function
    const handleDone = (id:number)=> {
     setTodos(todos.map((todo)=>todo.id===id?{...todo,isDone:!todo.isDone }:todo  ))
    }
+
+//delte function
+
+const handleDelete = (id:number) => { 
+  setTodos(todos.filter((todo)=>todo.id !==id));
+}
 
   return (
     <form className="todos_single" action="">
@@ -41,7 +47,7 @@ const SingleTodo = ( {todo,todos,setTodos} : Props) => {
 
           <div>
             <span className="icon"> <AiFillEdit/></span>
-            <span className="icon"><AiFillDelete/></span>
+            <span className="icon"  onClick={()=>handleDelete(todo.id)}><AiFillDelete/></span>
             <span className="icon"   onClick={ ()=> handleDone(todo.id)}  ><MdDone/></span>
 
           </div>
