@@ -24,8 +24,7 @@ const SingleTodo = ( {todo,todos,setTodos} : Props) => {
 const handleDelete = (id:number) => { 
   setTodos(todos.filter((todo)=>todo.id !==id));
 }
-
-  return (
+return (
     <form className="todos_single" action="">
 
     {
