@@ -16,7 +16,7 @@ const SingleTodo = ( {todo,todos,setTodos} : Props) => {
 
 //done buuton function
    const handleDone = (id:number)=> {
-    setTodos(todos.map((todo)=>todo.id===id?{...todo,isDone:!todo.isDone }:todo  ))
+    setTodos(todos.map((todo)=>todo.id===id?{...todo,isDone:!todo.isDone }:todo  ));
    }
 
 //delte function
