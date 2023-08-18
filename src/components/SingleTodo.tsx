@@ -28,7 +28,7 @@ const handleDelete = (id:number) => {
   return (
     <form className="todos_single" action="">
 
-      {
+    {
           todo.isDone?(
 
           <span className="todos_single-text">
