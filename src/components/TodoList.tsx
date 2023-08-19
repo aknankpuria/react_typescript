@@ -11,15 +11,42 @@ interface Props{
 
 const TodoList: React.FC<Props> = ({todos,setTodos}:Props) => {
   return (
-    <div className="todos">
-      {todos.map((todo)=> (
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    // this is older code before implimenting drag and drop
+    {// <div className="todos">
+    
+    
+      /* {todos.map((todo)=> (
 
     <SingleTodo todo={todo} key = {todo.id}
         todos={todos}
         setTodos={setTodos}
         />
-      ))}
-    </div>
+      ))} *
+    /* </div> */}
   )
 }
 
