@@ -34,16 +34,16 @@ return (
     {
           todo.isDone?(
 
-          <span className="todos_single-text">
-            {todo.todo}
-          </span>
-
-          ):
-          (
           <s className="todos_single-text">
             {todo.todo}
           </s>
 
+          ):
+          (
+
+          <span className="todos_single-text">
+            {todo.todo}
+          </span>
           )
 
       }
