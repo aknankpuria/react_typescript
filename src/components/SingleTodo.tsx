@@ -45,6 +45,9 @@ const handleEdit = (e:React.FormEvent,id:number) => {
   
  }
 
+ //useref 
+ const inputRef = useRef(null)
+
 //
 return (
     <form className="todos_single" onSubmit={(e)=>handleEdit(e,todo.id)}>
