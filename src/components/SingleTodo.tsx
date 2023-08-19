@@ -40,9 +40,9 @@ const handleEdit = (e:React.FormEvent,id:number) => {
    
   setTodos(todos.map((todo)=>(
     todo.id===id?{ ...todo,todo:editTodo}:todo
-  ),
-  setedit(false)
-  ))
+  ))),
+  setedit(false);
+  
  }
 
 //
