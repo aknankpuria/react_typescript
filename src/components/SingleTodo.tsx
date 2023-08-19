@@ -34,37 +34,64 @@ const handleDelete = (id:number) => {
 
 //edit function 
 
-const handleEdit = (id:number) => { }
+const handleEdit = (e:React.FormEvent,id:number) => {
+
+  e.preventDefault();
+   
+  setTodos(todos.map((todo)=>(
+    todo.id===id?{ ...todo,todo:editTodo}:todo
+  ),
+  setedit(false)
+  ))
+ }
 
 //
 return (
-    <form className="todos_single" action="">
+    <form className="todos_single" onSubmit={(e)=>handleEdit(e,todo.id)}>
+    {
+    
+     edit?(
+              <input  value={editTodo} onChange={(e) =>seteditTodo(e.target.value)} className='todos_single-text'/>
+
+     ):(
+
+
+      todo.isDone?(
+
+        <s className="todos_single-text">
+          {todo.todo}
+        </s>
+
+        ):
+        (
+
+        <span className="todos_single-text">
+          {todo.todo}
+        </span>
+        )
+
+     )
+   }
+
+
+
+
 
     {
-          todo.isDone?(
-
-          <s className="todos_single-text">
-            {todo.todo}
-          </s>
-
-          ):
-          (
-
-          <span className="todos_single-text">
-            {todo.todo}
-          </span>
-          )
+          
 
       }
 
           <div>
-            <span className="icon"  onClick={
+            <span className="icon"  onClick={()=>
+             { if(!edit && !todo.isDone){
+                setedit(!edit);
+              }
               
-              
-              ()=>handleEdit(todo.id)}> <AiFillEdit/></span>
+            }}> <AiFillEdit/></span>
 
 
-              
+
             <span className="icon"  onClick={()=>handleDelete(todo.id)}><AiFillDelete/></span>
             <span className="icon"   onClick={ ()=> handleDone(todo.id)}  ><MdDone/></span>
 
