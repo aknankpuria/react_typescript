@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState , useRef } from 'react'
 import { Todo } from './model';
 import "./style.css"
 import { AiFillEdit,AiFillDelete} from 'react-icons/ai';
@@ -46,7 +46,7 @@ const handleEdit = (e:React.FormEvent,id:number) => {
  }
 
  //useref 
- const inputRef = useRef(null)
+ const inputRef = useRef<HTMLInputElement>(null)
 
 //
 return (
