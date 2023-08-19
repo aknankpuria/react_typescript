@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Todo } from './model';
 import "./style.css"
 import { AiFillEdit,AiFillDelete} from 'react-icons/ai';
@@ -14,6 +14,13 @@ type Props = {
 
 const SingleTodo = ( {todo,todos,setTodos} : Props) => {
 
+//edit
+const [edit, setedit] = useState<boolean>(false);
+const [editTodo, seteditTodo] = useState<string>(todo.todo);
+
+
+
+
 //done buuton function
    const handleDone = (id:number)=> {
     setTodos(todos.map((todo)=>todo.id===id?{...todo,isDone:!todo.isDone }:todo  ));
@@ -28,6 +35,8 @@ const handleDelete = (id:number) => {
 //edit function 
 
 const handleEdit = (id:number) => { }
+
+//
 return (
     <form className="todos_single" action="">
 
@@ -49,7 +58,13 @@ return (
       }
 
           <div>
-            <span className="icon"  onClick={()=>handleEdit(todo.id)}> <AiFillEdit/></span>
+            <span className="icon"  onClick={
+              
+              
+              ()=>handleEdit(todo.id)}> <AiFillEdit/></span>
+
+
+              
             <span className="icon"  onClick={()=>handleDelete(todo.id)}><AiFillDelete/></span>
             <span className="icon"   onClick={ ()=> handleDone(todo.id)}  ><MdDone/></span>
 
