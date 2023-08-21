@@ -26,7 +26,7 @@ const TodoList: React.FC<Props> = ({todos,setTodos}:Props) => {
       </div>
       <div className="todos remove">
       <span className="todos_heading">
-          Completed Tasks .
+          Completed Tasks
       </span>
           {
             todos.map((todo)=>
