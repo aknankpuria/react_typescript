@@ -54,13 +54,13 @@ const TodoList: React.FC<Props> = ({todos,setTodos}:Props) => {
    
    
    
-   
+  )}
    
    
    
    
     // this is older code before implimenting drag and drop
-    {// <div className="todos">
+    /* <div className="todos">
     
     
       /* {todos.map((todo)=> (
@@ -70,8 +70,8 @@ const TodoList: React.FC<Props> = ({todos,setTodos}:Props) => {
         setTodos={setTodos}
         />
       ))} *
-    /* </div> */}
-  )
-}
+    /* </div> */
+  
+
 
 export default TodoList
