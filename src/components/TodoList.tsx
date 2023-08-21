@@ -14,8 +14,14 @@ const TodoList: React.FC<Props> = ({todos,setTodos}:Props) => {
 
     <div className="container">
       <div className="todos">
-        span.
-
+        <span className="todos_heading">
+          Active Tasks
+        </span>
+          {
+            todos.map((todo)=>
+           <SingleTodo  todo={todo} todos={todos} key={todo.id} setTodos={setTodos}/>
+            )
+          }
 
       </div>
       <div className="todos remove">
