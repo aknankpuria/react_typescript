@@ -11,6 +11,17 @@ interface Props{
 
 const TodoList: React.FC<Props> = ({todos,setTodos}:Props) => {
   return (
+
+    <div className="container">
+      <div className="todos">
+        span.
+
+
+      </div>
+      <div className="todos remove">
+        
+      </div>
+    </div>
    
    
    
