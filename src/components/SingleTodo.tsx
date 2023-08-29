@@ -7,6 +7,7 @@ import TodoList from './TodoList';
 
 
 type Props = {
+  index : number;
   todo : Todo;
   todos : Todo[];
   setTodos : React.Dispatch<React.SetStateAction<Todo[]>>;

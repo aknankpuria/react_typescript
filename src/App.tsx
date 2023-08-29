@@ -3,6 +3,9 @@ import './App.css';
 import InputField from './components/InputField';
 import { Todo } from './components/model';
 import TodoList from './components/TodoList';
+import { DragDropContext, DropResult } from 'react-beautiful-dnd';
+
+
 
 
 const App:React.FC = () => {
@@ -20,20 +23,29 @@ const handleAdd = (e : React.FormEvent) => {
   }
  };
 
-console.log(todos);
+const  onDragEnd = (result:DropResult) => {
+ 
+  console.log(result);
+
+}
 
   return (
-    <div className="App">
+   <DragDropContext onDragEnd ={ onDragEnd} >
+         <div className="App">
       <span className="heading">Taskify</span>
       <InputField todo={todo} setTodo={setTodo}  handleAdd = {handleAdd}/>
       
       <TodoList  todos = {todos} 
                setTodos={setTodos}
-               completedTodo = {completedTodo} 
+               completedTodos = {completedTodo} 
                setcompletedTodos={setcompletedTodo}/>
 
-
+ 
     </div>
+
+
+   </DragDropContext>
+
   );
 }
 
