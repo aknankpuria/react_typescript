@@ -3,7 +3,7 @@ import { Todo } from "./model";
 import "./style.css";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import { MdDone } from "react-icons/md";
-import TodoList from "./TodoList";
+// import TodoList from "./TodoList";
 import { Draggable } from "react-beautiful-dnd";
 
 type Props = {

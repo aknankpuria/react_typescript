@@ -47,7 +47,7 @@ const  onDragEnd = (result:DropResult) => {
 
   }
 
-  if(source.droppableId === "TodosList"){
+  if(destination.droppableId === "TodosRemove"){
     active.splice(destination.index, 0, add)
   } else {
    complete.splice(destination.index, 0, add)
