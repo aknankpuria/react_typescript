@@ -62,7 +62,7 @@ const  onDragEnd = (result:DropResult) => {
 };
 
   return (
-   <DragDropContext onDragEnd ={ onDragEnd} >
+   <DragDropContext onDragEnd ={onDragEnd} >
          <div className="App">
       <span className="heading">Taskify</span>
       <InputField todo={todo} setTodo={setTodo}  handleAdd = {handleAdd}/>
