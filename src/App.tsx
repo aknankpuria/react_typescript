@@ -12,7 +12,7 @@ const App:React.FC = () => {
 
 const [todo, setTodo] = useState<string >(" ");
 const [todos, setTodos] = useState <Todo[]>([]);
-const [completedTodo, setcompletedTodo] = useState<Todo[]>([]);
+const [completedTodos, setcompletedTodos] = useState<Todo[]>([]);
 
 
 const handleAdd = (e : React.FormEvent) => {
@@ -25,9 +25,41 @@ const handleAdd = (e : React.FormEvent) => {
 
 const  onDragEnd = (result:DropResult) => {
  
-  console.log(result);
+  // console.log(result);
+  const{ source , destination} = result;
 
-}
+  if(!destination){
+    return;
+  } 
+  if(source.droppableId === destination.droppableId && source.index === destination.index){
+    return;
+  
+  }
+   let add , active =todos,
+   complete = completedTodos;
+
+  if(source.droppableId === "TodosList"){
+    add = active[source.index];
+    active.splice( source.index , 1);
+  } else {
+   add = complete[source.index];
+   complete.splice( source.index , 1);
+
+  }
+
+  if(source.droppableId === "TodosList"){
+    active.splice(destination.index, 0, add)
+  } else {
+   complete.splice(destination.index, 0, add)
+
+  }
+
+  setcompletedTodos(complete);
+  setTodos(active);
+
+  
+
+};
 
   return (
    <DragDropContext onDragEnd ={ onDragEnd} >
@@ -37,8 +69,8 @@ const  onDragEnd = (result:DropResult) => {
       
       <TodoList  todos = {todos} 
                setTodos={setTodos}
-               completedTodos = {completedTodo} 
-               setcompletedTodos={setcompletedTodo}/>
+               completedTodos = {completedTodos} 
+               setcompletedTodos={setcompletedTodos}/>
 
  
     </div>
