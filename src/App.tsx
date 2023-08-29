@@ -38,7 +38,7 @@ const  onDragEnd = (result:DropResult) => {
    let add , active =todos,
    complete = completedTodos;
 
-  if(source.droppableId === "TodosList"){
+  if(source.droppableId === "TodoList"){
     add = active[source.index];
     active.splice( source.index , 1);
   } else {
@@ -47,7 +47,7 @@ const  onDragEnd = (result:DropResult) => {
 
   }
 
-  if(destination.droppableId === "TodosRemove"){
+  if(destination.droppableId === "TodoList"){
     active.splice(destination.index, 0, add)
   } else {
    complete.splice(destination.index, 0, add)

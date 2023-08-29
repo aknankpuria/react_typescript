@@ -19,7 +19,7 @@ const TodoList: React.FC<Props> = ({
 }: Props) => {
   return (
     <div className="container">
-      <Droppable droppableId="TodosList">
+      <Droppable droppableId="TodoList">
         {(provided) => (
           <div
             className="todos"
@@ -36,8 +36,7 @@ const TodoList: React.FC<Props> = ({
                 setTodos={setTodos}
               />
             ))}
-
-            {provided.placeholder}
+               {provided.placeholder}
           </div>
 
 
