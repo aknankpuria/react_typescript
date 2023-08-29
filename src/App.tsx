@@ -9,6 +9,7 @@ const App:React.FC = () => {
 
 const [todo, setTodo] = useState<string >(" ");
 const [todos, setTodos] = useState <Todo[]>([]);
+const [completedTodo, setcompletedTodo] = useState<Todo[]>([]);
 
 
 const handleAdd = (e : React.FormEvent) => {
@@ -26,7 +27,10 @@ console.log(todos);
       <span className="heading">Taskify</span>
       <InputField todo={todo} setTodo={setTodo}  handleAdd = {handleAdd}/>
       
-      <TodoList  todos = {todos} setTodos={setTodos}/>
+      <TodoList  todos = {todos} 
+               setTodos={setTodos}
+               completedTodo = {completedTodo} 
+               setcompletedTodos={setcompletedTodo}/>
 
 
     </div>
