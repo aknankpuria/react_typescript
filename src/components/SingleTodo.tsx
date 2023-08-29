@@ -38,7 +38,7 @@ const SingleTodo = ({ index, todo, todos, setTodos }: Props) => {
   const handleEdit = (e: React.FormEvent, id: number) => {
     e.preventDefault();
 
-   setTodos(
+    setTodos(
       todos.map((todo) => (todo.id === id ? { ...todo, todo: editTodo } : todo))
     );
     setedit(false);
