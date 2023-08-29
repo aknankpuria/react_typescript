@@ -2,6 +2,7 @@ import React from 'react';
 import { Todo } from './model';
 import "./style.css";
 import SingleTodo from './SingleTodo';
+import { Droppable } from 'react-beautiful-dnd';
 
 interface Props{
   todos : Todo[];
@@ -15,7 +16,12 @@ const TodoList: React.FC<Props> = ({todos,setTodos}:Props) => {
   return (
 
     <div className="container">
-      <div className="todos">
+      <Droppable droppableId='TodoList'>  
+              {
+                
+              (provided )=> (
+
+                <div className="todos" ref= {provided.innerRef} {...provided.droppableProps}>
         <span className="todos_heading">
           Active Tasks
         </span>
@@ -26,6 +32,16 @@ const TodoList: React.FC<Props> = ({todos,setTodos}:Props) => {
           }
 
       </div>
+
+
+
+              )
+
+
+              }
+      
+
+      </Droppable>
       <div className="todos remove">
       <span className="todos_heading">
           Completed Tasks
