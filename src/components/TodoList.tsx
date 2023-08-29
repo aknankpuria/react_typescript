@@ -12,7 +12,7 @@ interface Props{
 
 }
 
-const TodoList: React.FC<Props> = ({todos,setTodos}:Props) => {
+const TodoList: React.FC<Props> = ({todos,setTodos,completedTodos,setcompletedTodos}:Props) => {
   return (
 
     <div className="container">
@@ -54,8 +54,12 @@ const TodoList: React.FC<Props> = ({todos,setTodos}:Props) => {
                 Completed Tasks
             </span>
                 {
-                  todos.map((todo)=>
-                 <SingleTodo  todo={todo} todos={todos} key={todo.id} setTodos={setTodos}/>
+                  completedTodos.map((todo)=>
+                 <SingleTodo  
+                 todo={todo} 
+                 todos={completedTodos} 
+                 key={todo.id}
+                  setTodos={setcompletedTodos}/>
                   )
                 }
       
