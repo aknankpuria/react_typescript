@@ -5,8 +5,6 @@ export interface Todo{
 }
 
 
-
-
 //use reducerhook
 
 // import React from 'react'
