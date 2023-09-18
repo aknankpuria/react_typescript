@@ -68,5 +68,4 @@ const App: React.FC = () => {
     </DragDropContext>
   );
 };
-
 export default App;
