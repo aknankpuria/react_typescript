@@ -14,6 +14,5 @@ export interface Todo{
 //     const [state, dispatch] = useReducer(todoReducer, second, third)
 //   )
 // }
-
 //  need to learn usereducer hook 
 
